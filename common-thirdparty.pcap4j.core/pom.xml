@@ -1,28 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.1</version>
+    <version>0.2.0.2</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.pcap4j.core</artifactId>
   <packaging>bundle</packaging>
-  <version>1.7.3</version>
+  <version>1.7.5</version>
   <description>The core module of Pcap4J.</description>
   <name>DiamondQ Common: Third Party: pcap4j core</name>
+  <properties>
+    <osgi.base.excludeartifacts>jna|slf4j-api</osgi.base.excludeartifacts>
+  </properties>
   <dependencies>
+    <!-- Explicit listing of dependencies to allow the POM to transitively include when referenced. -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>5.1.0</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>org.pcap4j</groupId>
       <artifactId>pcap4j-core</artifactId>
-      <version>${project.version}</version>
+      <version>1.7.5</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.pcap4j</groupId>
       <artifactId>pcap4j-packetfactory-propertiesbased</artifactId>
-      <version>${project.version}</version>
+      <version>1.7.5</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
@@ -35,8 +52,6 @@
             <id>default-bundle</id>
             <configuration>
               <instructions>
-                <!-- A few extra packages are marked optional -->
-                <Import-Package>*</Import-Package>
                 <DynamicImport-Package>*</DynamicImport-Package>
               </instructions>
             </configuration>

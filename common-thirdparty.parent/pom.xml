@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.diamondq.common</groupId>
   <artifactId>common-thirdparty.parent</artifactId>
-  <version>0.2.0.1</version>
+  <version>0.2.0.2</version>
   <packaging>pom</packaging>
   <name>DiamondQ Third Party: Parent</name>
   <description>The parent for all OSGi wrapped third party libraries</description>
@@ -14,6 +14,8 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <gpg.arg1>--pinentry-mode</gpg.arg1>
     <gpg.arg2>loopback</gpg.arg2>
+    <!-- The basic list of headers to remove from the generated MANIFEST.MF -->
+    <osgi.base.excludeartifacts></osgi.base.excludeartifacts>
   </properties>
   <licenses>
     <license>
@@ -192,10 +194,10 @@
             <id>default-bundle</id>
             <configuration>
               <instructions>
-                <_removeheaders>Tool, Originally-Created-By,
-                  Bnd-LastModified, Private-Package, Include-Resource,
-                  Embed-Dependency, Embedded-Artifacts</_removeheaders>
-                <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+                <_removeheaders>Tool, Originally-Created-By, Bnd-LastModified, Private-Package, Include-Resource, Embed-Dependency, Embedded-Artifacts, Embed-Transitive</_removeheaders>
+                <Embed-Transitive>true</Embed-Transitive>
+                <Embed-Dependency>*;inline=true;scope=provided;artifactId=!${osgi.base.excludeartifacts}</Embed-Dependency>
+                <Import-Package>*</Import-Package>
                 <_exportcontents>*</_exportcontents>
               </instructions>
             </configuration>

@@ -5,25 +5,66 @@
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.1</version>
+    <version>0.2.0.2</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.simple.odf</artifactId>
   <packaging>bundle</packaging>
-  <version>0.8.2</version>
+  <version>0.8.2.2</version>
   <description>A simple API for easy manipulation of ODF documents.</description>
   <name>DiamondQ Common: Third Party: Simple ODF</name>
+  <properties>
+    <osgi.base.excludeartifacts>commons-beanutils|commons-collections|commons-digester|commons-logging|commons-validator|slf4j-api|xml-apis</osgi.base.excludeartifacts>
+  </properties>
   <dependencies>
+    <!-- Explicit listing of dependencies to allow the POM to transitively include when referenced. -->
     <dependency>
       <groupId>org.apache.servicemix.bundles</groupId>
       <artifactId>org.apache.servicemix.bundles.xerces</artifactId>
-      <version>2.11.0_1</version>
-      <scope>provided</scope>
+      <version>2.12.0_1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.9.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-digester</groupId>
+      <artifactId>commons-digester</artifactId>
+      <version>1.8.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-validator</groupId>
+      <artifactId>commons-validator</artifactId>
+      <version>1.5.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>1.4.01</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-iri</artifactId>
       <version>1.0.2</version>
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>org.slf4j</groupId>
@@ -39,6 +80,7 @@
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-core</artifactId>
       <version>2.11.2</version>
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>xerces</groupId>
@@ -58,11 +100,13 @@
       <groupId>net.rootdev</groupId>
       <artifactId>java-rdfa</artifactId>
       <version>0.4.2</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.odftoolkit</groupId>
       <artifactId>odfdom-java</artifactId>
       <version>0.8.11-incubating</version>
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>org.apache.odftoolkit</groupId>
@@ -78,6 +122,7 @@
       <groupId>org.apache.odftoolkit</groupId>
       <artifactId>simple-odf</artifactId>
       <version>0.8.2-incubating</version>
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>xerces</groupId>
