@@ -161,6 +161,10 @@
       <id>default</id>
       <activation>
         <activeByDefault>true</activeByDefault>
+        <property>
+          <name>deploy</name>
+          <value>!self</value>
+        </property>
       </activation>
       <build>
         <plugins>
