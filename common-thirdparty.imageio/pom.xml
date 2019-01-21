@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.diamondq.common</groupId>
+    <artifactId>common-thirdparty.parent</artifactId>
+    <version>0.2.0.3</version>
+    <relativePath>../common-thirdparty.parent</relativePath>
+  </parent>
+  <artifactId>common-thirdparty.imageio</artifactId>
+  <version>3.4.1</version>
+  <description>OSGi Wrapper of Twelve Monkeys ImageIO</description>
+  <name>DiamondQ Common: Third Party: imageio</name>
+  <packaging>bundle</packaging>
+  <properties>
+    <!-- Override this property to inject extra Import-Package elements. NOTE: The osgi.import.packages property expects 
+      this property to end with a comma to support chaining -->
+    <osgi.extra.import.packages>magick;resolution:=optional,</osgi.extra.import.packages>
+  </properties>
+  <dependencies>
+    <!-- Explicit listing of dependencies to allow the POM to transitively include when referenced. -->
+    <dependency>
+      <groupId>com.twelvemonkeys.imageio</groupId>
+      <artifactId>imageio-jpeg</artifactId>
+      <version>3.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.twelvemonkeys.imageio</groupId>
+      <artifactId>imageio-tiff</artifactId>
+      <version>3.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.twelvemonkeys.imageio</groupId>
+      <artifactId>imageio-psd</artifactId>
+      <version>3.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.twelvemonkeys.imageio</groupId>
+      <artifactId>imageio-bmp</artifactId>
+      <version>3.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.twelvemonkeys.imageio</groupId>
+      <artifactId>imageio-pdf</artifactId>
+      <version>3.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>
