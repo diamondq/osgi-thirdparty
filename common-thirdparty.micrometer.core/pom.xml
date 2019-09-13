@@ -4,12 +4,12 @@
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.3</version>
+    <version>0.2.0.4</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.micrometer.core</artifactId>
   <packaging>bundle</packaging>
-  <version>1.1.2</version>
+  <version>1.2.1</version>
   <name>DiamondQ Common: Third Party: Micrometer: Core</name>
   <properties>
     <!-- Override this property to inject extra Export-Package commands. This is expected to end in a comma to allow chaining. -->
@@ -24,19 +24,6 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.hdrhistogram</groupId>
-      <artifactId>HdrHistogram</artifactId>
-      <version>2.1.9</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.25</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
       <version>3.0.2</version>
@@ -44,23 +31,29 @@
       <optional>true</optional>
     </dependency>
     <dependency>
+      <groupId>org.hdrhistogram</groupId>
+      <artifactId>HdrHistogram</artifactId>
+      <version>2.1.11</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>io.dropwizard.metrics</groupId>
       <artifactId>metrics-core</artifactId>
-      <version>4.0.3</version>
+      <version>4.0.5</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>27.0-jre</version>
+      <version>28.0-jre</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.github.ben-manes.caffeine</groupId>
       <artifactId>caffeine</artifactId>
-      <version>2.6.2</version>
+      <version>2.7.0</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
@@ -74,14 +67,14 @@
     <dependency>
       <groupId>javax.cache</groupId>
       <artifactId>cache-api</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.hazelcast</groupId>
       <artifactId>hazelcast</artifactId>
-      <version>3.11</version>
+      <version>3.12.1</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
@@ -95,14 +88,21 @@
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
-      <version>9.4.12.RC2</version>
+      <version>9.2.28.v20190418</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-core</artifactId>
-      <version>8.5.34</version>
+      <version>8.5.42</version>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.6</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
@@ -123,42 +123,56 @@
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
-      <version>2.11.1</version>
+      <version>2.12.0</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.projectreactor</groupId>
       <artifactId>reactor-core</artifactId>
-      <version>3.2.1.RELEASE</version>
+      <version>3.2.12.RELEASE</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.projectreactor.netty</groupId>
       <artifactId>reactor-netty</artifactId>
-      <version>0.8.1.RELEASE</version>
+      <version>0.8.11.RELEASE</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
-      <version>1.8.13</version>
+      <version>1.8.14</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
-      <version>3.11.0</version>
+      <version>3.14.2</version>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>3.11.0-beta4</version>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-core</artifactId>
-      <version>1.1.2</version>
+      <version>1.2.1</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
@@ -168,13 +182,4 @@
       </exclusions>
     </dependency>
   </dependencies>
-  <!-- <build> <plugins> <plugin> <groupId>org.apache.felix</groupId> <artifactId>maven-bundle-plugin</artifactId> <executions> 
-    <execution> <id>default-bundle</id> <configuration> <instructions> <Import-Package> ch.qos.logback.*;resolution:=optional, 
-    com.codahale.metrics;resolution:=optional, com.github.benmanes.caffeine.*;resolution:=optional, com.google.common.cache;resolution:=optional, 
-    com.hazelcast.*;resolution:=optional, com.sun.management;resolution:=optional, com.netflix.hystrix.*;resolution:=optional, 
-    net.sf.ehcache;resolution:=optional, net.sf.ehcache.statistics;resolution:=optional, okhttp3;resolution:=optional, org.apache.catalina;resolution:=optional, 
-    org.aspectj.*;resolution:=optional, org.eclipse.jetty.*;resolution:=optional, org.hibernate;resolution:=optional, org.hibernate.*;resolution:=optional, 
-    javax.cache;resolution:=optional, javax.persistence;resolution:=optional, rx;resolution:=optional, rx.*;resolution:=optional, 
-    * </Import-Package> <Embed-Dependency>*;scope=compile</Embed-Dependency> <Embed-Transitive>true</Embed-Transitive> </instructions> 
-    </configuration> </execution> </executions> </plugin> </plugins> </build> -->
 </project>
