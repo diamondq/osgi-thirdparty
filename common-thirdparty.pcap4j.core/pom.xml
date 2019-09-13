@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.2</version>
+    <version>0.2.0.3</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.pcap4j.core</artifactId>
@@ -13,7 +13,7 @@
   <description>The core module of Pcap4J.</description>
   <name>DiamondQ Common: Third Party: pcap4j core</name>
   <properties>
-    <osgi.base.excludeartifacts>jna|slf4j-api</osgi.base.excludeartifacts>
+    <osgi.base.excludeartifacts>;artifactId=!jna|slf4j-api</osgi.base.excludeartifacts>
   </properties>
   <dependencies>
     <!-- Explicit listing of dependencies to allow the POM to transitively include when referenced. -->

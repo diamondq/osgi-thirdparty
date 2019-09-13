@@ -3,18 +3,19 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.diamondq.common</groupId>
   <artifactId>common-thirdparty.parent</artifactId>
-  <version>0.2.0.3</version>
+  <version>0.2.0.4</version>
   <packaging>pom</packaging>
   <name>DiamondQ Third Party: Parent</name>
-  <description>The parent for all OSGi wrapped third party libraries</description>
+  <description>${project.name}</description>
   <url>http://www.diamondq.com</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <gpg.arg1>--pinentry-mode</gpg.arg1>
     <gpg.arg2>loopback</gpg.arg2>
-    <!-- The basic list of headers to remove from the generated MANIFEST.MF -->
-    <osgi.base.excludeartifacts></osgi.base.excludeartifacts>
+    <!-- The list of artifacts to remove from the generated JAR -->
+    <!-- If present, it should look like ;artifactId=!abcd -->
+    <osgi.base.excludeartifacts />
     <!-- The standard to not Export any package ending in impl. This is expected to end in a comma to allow chaining. -->
     <osgi.dont.export.impl>!*.impl,!*.impl.*,</osgi.dont.export.impl>
     <!-- Override this property to inject extra DON'T commands not NOT Export. This is expected to end in a comma to allow 
@@ -44,6 +45,7 @@
   </licenses>
   <developers>
     <developer>
+      <id>mmansell</id>
       <name>Mike Mansell</name>
       <email>code@michaelmansell.com</email>
       <organization>DiamondQ</organization>
@@ -253,11 +255,13 @@
               <execution>
                 <id>default-bundle</id>
                 <configuration>
+                  <createDependencyReducedPom>true</createDependencyReducedPom>
+                  <dumpInstructions>bnd.txt</dumpInstructions>
                   <instructions>
                     <_removeheaders>Tool, Originally-Created-By, Bnd-LastModified, Private-Package, Include-Resource,
                       Embed-Dependency, Embedded-Artifacts, Embed-Transitive</_removeheaders>
                     <Embed-Transitive>true</Embed-Transitive>
-                    <Embed-Dependency>*;inline=true;scope=provided;artifactId=!${osgi.base.excludeartifacts}</Embed-Dependency>
+                    <Embed-Dependency>*;inline=true;scope=provided${osgi.base.excludeartifacts}</Embed-Dependency>
                     <Import-Package>${osgi.import.packages}</Import-Package>
                     <Export-Package>${osgi.export.packages}</Export-Package>
                     <DynamicImport-Package>${osgi.dynamicimport.package}</DynamicImport-Package>
@@ -409,7 +413,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>4.2.1</version>
         </plugin>
         <plugin>
           <groupId>org.sonatype.plugins</groupId>

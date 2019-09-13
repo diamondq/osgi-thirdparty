@@ -1,22 +1,37 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.1</version>
+    <version>0.2.0.4</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.opentracing.noop</artifactId>
   <packaging>bundle</packaging>
-  <version>0.31.0_01</version>
+  <version>0.33.0</version>
   <name>DiamondQ Common: Third Party: OpenTracing NOOP</name>
+  <properties>
+    <osgi.base.excludeartifacts>;artifactId=!opentracing-api|common-thirdparty.opentracing.api</osgi.base.excludeartifacts>
+  </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.diamondq.common</groupId>
+      <artifactId>common-thirdparty.opentracing.api</artifactId>
+      <version>0.33.0</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>io.opentracing</groupId>
       <artifactId>opentracing-noop</artifactId>
-      <version>0.31.0</version>
+      <version>0.33.0</version>
+      <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>io.opentracing</groupId>
+          <artifactId>opentracing-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 </project>
