@@ -4,12 +4,12 @@
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.3</version>
+    <version>0.2.0.4</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.pcap4j.core</artifactId>
   <packaging>bundle</packaging>
-  <version>1.7.5</version>
+  <version>1.8.2</version>
   <description>The core module of Pcap4J.</description>
   <name>DiamondQ Common: Third Party: pcap4j core</name>
   <properties>
@@ -20,25 +20,25 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.25</version>
+      <version>1.7.26</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
-      <version>5.1.0</version>
+      <version>5.3.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.pcap4j</groupId>
       <artifactId>pcap4j-core</artifactId>
-      <version>1.7.5</version>
+      <version>1.8.2</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.pcap4j</groupId>
       <artifactId>pcap4j-packetfactory-propertiesbased</artifactId>
-      <version>1.7.5</version>
+      <version>1.8.2</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
