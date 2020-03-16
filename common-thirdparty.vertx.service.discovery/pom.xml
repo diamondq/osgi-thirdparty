@@ -4,11 +4,11 @@
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.3</version>
+    <version>0.2.0.4</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.vertx.service.discovery</artifactId>
-  <version>3.7.0</version>
+  <version>3.8.5</version>
   <description>OSGi Wrapper of Vertx Service Discovery</description>
   <name>DiamondQ Common: Third Party: vertx.service.discovery</name>
   <packaging>bundle</packaging>
@@ -16,63 +16,50 @@
     <!-- Explicit listing of dependencies to allow the POM to transitively include when referenced. -->
     <dependency>
       <groupId>io.vertx</groupId>
-      <artifactId>vertx-core</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
       <artifactId>vertx-codegen</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-jdbc-client</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-mongo-client</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-redis-client</artifactId>
-      <version>3.6.2</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-service-proxy</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
+      <version>3.8.5</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
+      <version>3.8.5</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-jdbc-client</artifactId>
+      <version>3.8.5</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-redis-client</artifactId>
+      <version>3.8.5</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-mongo-client</artifactId>
+      <version>3.8.5</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web-client</artifactId>
-      <version>3.7.0</version>
-      <scope>compile</scope>
+      <version>3.8.5</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
+      <artifactId>vertx-service-proxy</artifactId>
+      <version>3.8.5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
       <artifactId>vertx-service-discovery</artifactId>
-      <version>3.7.0</version>
+      <version>3.8.5</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
