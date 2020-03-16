@@ -4,12 +4,12 @@
   <parent>
     <groupId>com.diamondq.common</groupId>
     <artifactId>common-thirdparty.parent</artifactId>
-    <version>0.2.0.3</version>
+    <version>0.2.0.4</version>
     <relativePath>../common-thirdparty.parent</relativePath>
   </parent>
   <artifactId>common-thirdparty.jcasbin</artifactId>
   <packaging>bundle</packaging>
-  <version>1.1.0</version>
+  <version>1.4.0</version>
   <description>OSGi Wrapper of jcasbin</description>
   <name>DiamondQ Common: Third Party: jcasbin</name>
   <properties>
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>org.casbin</groupId>
       <artifactId>jcasbin</artifactId>
-      <version>1.1.0</version>
+      <version>1.4.0</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
